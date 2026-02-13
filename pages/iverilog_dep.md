@@ -9,9 +9,11 @@ permalink: /notes/comp_arch/iverilog_dep
 ## for macOS people....
 
 ### Icarus Verilog (iverilog):
-just [homebrew](https://formulae.brew.sh/formula/icarus-verilog) this.
+just [homebrew](https://formulae.brew.sh/formula/icarus-verilog) this. \
 
-### gtkwave:  
+make sure you have vvp
+
+### GTKwave:  
 if you already tried installing through brew...\
 `brew uninstall gtkwave`  
 `brew untap randomplum/gtkwave`  
