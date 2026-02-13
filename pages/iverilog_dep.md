@@ -17,8 +17,8 @@ just [homebrew](https://formulae.brew.sh/formula/icarus-verilog) this.
 `brew install --HEAD randomplum/gtkwave/gtkwave`
 
 ### use makefile from here:
-https://github.com/robmarano/verilog_project_template/tree/main \
-few things that needed to be changed: \
+[https://github.com/robmarano/verilog_project_template/tree/main](https://github.com/robmarano/verilog_project_template/tree/main) \
+few things that needed to be changed:
 
 ```
 simulate: $(COMPONENT).vvp 
@@ -26,8 +26,8 @@ simulate: $(COMPONENT).vvp
 	$(SIMULATOR) $(SFLAGS) $(COMPONENT).vvp #$(SOUTPUT) 
 ```
 
-comment out the $(SOUTPUT) part \
-Also I added `*.vvp` on my clean \
+comment out the $(SOUTPUT) part
+Also I added `*.vvp` on my clean
 
 ### Example:
 ![example_usage.png](./assets/comp_arch_makefile.png)
