@@ -12,6 +12,7 @@ permalink: /notes/comp_arch/iverilog_dep
 just [homebrew](https://formulae.brew.sh/formula/icarus-verilog) this.
 
 ### gtkwave:  
+if you already tried installing through brew...\
 `brew uninstall gtkwave`  
 `brew untap randomplum/gtkwave`  
 `brew install --HEAD randomplum/gtkwave/gtkwave`
@@ -32,16 +33,16 @@ Also I added `*.vvp` on my clean
 ### Example:
 ![example_usage.png](./assets/comp_arch_makefile.png)
 
--> to compile \
+→ to compile \
 `make COMPONENT=tb_example_module.sv compile` 
 
--> to run \
+→ to run \
 `make COMPONENT=tb_example_module.sv simulate` 
 
--> to display (GTKwave) \
+→ to display (GTKwave) \
 `make COMPONENT=example_module display` 
 
--> to clean \
+→ to clean \
 `make COMPONENT=example_module clean` 
 
 ** Notice how it is still not that great of a makefile.
