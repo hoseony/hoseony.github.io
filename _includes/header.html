@@ -1,0 +1,110 @@
+<div class="js-promo-color-modes-banner-profile isInitialToggle position-relative">
+  <!-- left -->
+    <a href="/" class="profile-title-text">
+    Hoseon Yu <span>- personal website</span>
+    </a>
+
+  <!-- right -->
+  <nav class="header-tabs" aria-label="Site">
+    <a class="header-tab" href="/about">about</a>
+    <a class="header-tab" href="/projects">projects</a>
+    <a class="header-tab" href="/notes">notes</a>
+
+    <!-- SIMPLE checkbox -->
+    <label class="theme-checkbox">
+      <input type="checkbox" id="theme-checkbox">
+    </label>
+  </nav>
+</div>
+
+<style>
+/* header layout */
+.js-promo-color-modes-banner-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 14px;
+}
+
+/* title */
+.profile-title-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono","Courier New", monospace;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--color-fg-default, inherit);
+  text-decoration: none;
+  color: var(--color-fg-default, inherit);
+}
+.profile-title-text span {
+  color: var(--color-fg-muted, inherit);
+  font-weight: 500;
+}
+
+.profile-title-text:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* tabs */
+.header-tabs {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.header-tab {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono","Courier New", monospace;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--color-fg-muted, inherit);
+  text-decoration: none;
+}
+
+.header-tab:hover {
+  color: var(--color-fg-default, inherit);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* checkbox (keep it boring on purpose) */
+.theme-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono","Courier New", monospace;
+  font-size: 12px;
+  color: var(--color-fg-muted, inherit);
+}
+
+.theme-checkbox input {
+  cursor: pointer;
+}
+</style>
+
+<script>
+(function () {
+  const KEY = "markdown_only_dark_mode";
+  const checkbox = document.getElementById("theme-checkbox");
+  const root = document.documentElement;
+
+  function apply(mode) {
+    root.setAttribute("data-color-mode", mode);
+    checkbox.checked = (mode === "dark");
+    localStorage.setItem(KEY, mode);
+  }
+
+  // load saved mode
+  const saved = localStorage.getItem(KEY);
+  if (saved) apply(saved);
+
+  checkbox.addEventListener("change", () => {
+    apply(checkbox.checked ? "dark" : "light");
+  });
+})();
+</script>
