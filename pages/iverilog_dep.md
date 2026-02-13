@@ -26,7 +26,7 @@ simulate: $(COMPONENT).vvp
 	$(SIMULATOR) $(SFLAGS) $(COMPONENT).vvp #$(SOUTPUT) 
 ```
 
-comment out the $(SOUTPUT) part
+comment out the $(SOUTPUT) part \
 Also I added `*.vvp` on my clean
 
 ### Example:
