@@ -5,22 +5,48 @@ permalink: /notes/comp_arch/iverilog_dep
 ---
 
 # Computer Architecture
+[← ../Computer_Architecture](../comp_arch)
 
 ## for macOS people....
 
 ### Icarus Verilog (iverilog):
-just [homebrew](https://formulae.brew.sh/formula/icarus-verilog) this. \
-
-make sure you have vvp
+This is your compiler for system verilog. You can [homebrew](https://formulae.brew.sh/formula/icarus-verilog) this. \
+** make sure you have vvp
 
 ### GTKwave:  
-if you already tried installing through brew...\
-`brew uninstall gtkwave`  
-`brew untap randomplum/gtkwave`  
-`brew install --HEAD randomplum/gtkwave/gtkwave`
+if you already tried installing through brew...
 
-### use makefile from here:
-[https://github.com/robmarano/verilog_project_template/tree/main](https://github.com/robmarano/verilog_project_template/tree/main) \
+```
+brew uninstall gtkwave
+brew untap randomplum/gtkwave
+brew install --HEAD randomplum/gtkwave/gtkwave
+```
+
+### Running the files:
+
+First you need to compile the file
+```
+iverilog -g2012 -o simulation.vvp tb_example.sv example.sv
+```
+* -g2012 for systemVerilog 2012 features
+* -o to specify output file
+
+Then execute the file with
+```
+vvp simulation.vvp
+```
+
+to view the waves
+```
+gtkwave simulation.vcd
+```
+
+note that to view the wave, you need to add dumpfiles and dumpvars in your testbench file. \
+Also, as you might have noticed this sucks and too much works. So let's use makefile.
+
+### Makefile:
+first, create a file that is called `Makefile`. \
+I recommend using [this](https://github.com/robmarano/verilog_project_template/tree/main).
 few things that needed to be changed:
 
 ```
@@ -47,4 +73,5 @@ Also I added `*.vvp` on my clean
 → to clean \
 `make COMPONENT=example_module clean` 
 
-** Notice how it is still not that great of a makefile.
+** Notice how it is still not that great of a makefile. But I don't know Makefile well enough yet.
+

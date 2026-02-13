@@ -5,4 +5,5 @@ permalink: /notes/comp_arch/
 ---
 
 # Computer Architecture
-- [setting up env](./iverilog_dep)
+- setting up env for MIPS
+- [macOS, setting up env for iverilog](./iverilog_dep)
