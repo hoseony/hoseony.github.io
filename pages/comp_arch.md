@@ -3,7 +3,7 @@ layout: default
 title: Computer Architecture
 permalink: /notes/comp_arch/
 ---
-[← ../Notes](../notes)
+[← ../Notes](../)
 
 # Computer Architecture
 - setting up env for MIPS
