@@ -7,7 +7,7 @@ permalink: /notes/comp_arch/iverilog_dep
 # Computer Architecture
 [← ../Computer_Architecture](../comp_arch)
 
-## for macOS people....
+## SystemVerilog on macOS
 
 ### Icarus Verilog (iverilog):
 This is your compiler for system verilog. You can [homebrew](https://formulae.brew.sh/formula/icarus-verilog) this. \
