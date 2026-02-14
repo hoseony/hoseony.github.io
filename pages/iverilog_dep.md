@@ -42,7 +42,7 @@ gtkwave simulation.vcd
 ```
 
 note that to view the wave, you need to add dumpfiles and dumpvars in your testbench file. \
-Also, as you might have noticed this sucks and too much works. So let's use makefile.
+Also, as you might have noticed this is not fun. So let's use makefile.
 
 ### Makefile:
 first, create a file that is called `Makefile`. \
