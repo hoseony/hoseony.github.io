@@ -6,4 +6,4 @@ permalink: /notes/comp_arch/
 
 # Computer Architecture
 - setting up env for MIPS
-- [macOS, setting up env for systemVerilog(./iverilog_dep)
+- [macOS, setting up env for systemVerilog](./iverilog_dep)
