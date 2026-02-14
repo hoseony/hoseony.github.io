@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Computer Architecture
+title: SystemVerilog on macOS
 permalink: /notes/comp_arch/iverilog_dep
+lastmod: 2026-02-13
 ---
-
-# Computer Architecture
 [← ../Computer_Architecture](../comp_arch)
 
-## SystemVerilog on macOS
+## SystemVerilog on macOS 
+_Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 
 ### Icarus Verilog (iverilog):
 This is your compiler for system verilog. You can [homebrew](https://formulae.brew.sh/formula/icarus-verilog) this. \
