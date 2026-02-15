@@ -54,6 +54,7 @@ module tb_my_module; // components that you want to test should be declared here
 
     // DUT signals, *dut meaning design under test (DUT: Device Undet Test)
     // here you are declaring variables to connect to DUT.
+    // don't do input logic clk or output logic ... because that is not the module
     logic clk;
     logic rst;
     logic [3:0] data_in;
@@ -108,4 +109,18 @@ module tb_my_module; // components that you want to test should be declared here
     end
 
 endmodule 
+```
+
+Another useful thing that I wanted to mention is that when you have several input variables, you can make something that is really similar to the truth table:
+
+```c
+initial a = 0;
+always #5 a = ~a;
+
+initial b = 0;
+always #10 b = ~b;
+
+initial c = 0;
+always #20 c = ~b;
+//and so on...
 ```
