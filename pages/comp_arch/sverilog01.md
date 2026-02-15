@@ -24,7 +24,9 @@ module my_module (
 
     // here we define internal signals, parameters and types before using them
     logic [3:0] internal_signal;
-    localparam WIDTH = 4; // by my understanding this just decalres local varisable called width and making it 4. Nothing crazy
+    localparam WIDTH = 4;
+    // this just decalres local varisable called WIDTH and making it 4. 
+    // though it is not used in here anyways.
 
     // Dataflow: continuous assignment
     assign internal_signal = ~data_in;  // ~ is bitwise not
