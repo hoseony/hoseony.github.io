@@ -6,6 +6,6 @@ permalink: /notes/comp_arch/
 [← ../Notes](../)
 
 # Computer Architecture
-- setting up env for MIPS
+- [MIPS 01](./MIPS01)
 - [SystemVerilog on macOS](./iverilog_dep)
 - [Learning SystemVerilog 01](./sverilog01)
