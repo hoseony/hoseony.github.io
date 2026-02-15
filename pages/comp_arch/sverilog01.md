@@ -4,6 +4,7 @@ title: SystemVerilog on macOS
 permalink: /notes/comp_arch/sverilog01
 lastmod: 2026-02-14
 ---
+[← ../Computer_Architecture](../comp_arch)
 
 # Learning SystemVerilog 01
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_

@@ -8,4 +8,4 @@ permalink: /notes/comp_arch/
 # Computer Architecture
 - setting up env for MIPS
 - [SystemVerilog on macOS](./iverilog_dep)
-- [Learning SystemVerilog](./sverilog01)
+- [Learning SystemVerilog 01](./sverilog01)
