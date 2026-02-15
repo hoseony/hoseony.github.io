@@ -33,6 +33,14 @@ This is very good online MIPS emulator. I found this more useful and user friend
 
 ## Syscall
 While I was working on the homework, I found this website: [syscall reference](https://hwlabnitc.github.io/MIPS/mips_syscalls&tutorial). It is very well documented.
+The basic use of syscall is shown above as well. If you want to take integer input, this is what you need to do.
+```c
+main:
+    # int t0 = getchar()
+    li $v0, 5
+    syscall 
+    move $t0, $v0
+```
 
 ## Stack Pointer
 These two videos gave me enough explanation. 
