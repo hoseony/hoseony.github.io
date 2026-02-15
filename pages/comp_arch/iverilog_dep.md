@@ -6,7 +6,7 @@ lastmod: 2026-02-13
 ---
 [← ../Computer_Architecture](../comp_arch)
 
-## SystemVerilog on macOS 
+## SystemVerilog on macOS & Makefile
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 
 ### Icarus Verilog (iverilog):
