@@ -28,9 +28,6 @@ void draw_board(void) {
         }
         printf("\n");
     }
-
-    for (int i = 0; i < B_SIZE; i++) {
-    }
 }
 
 void init_board(void) {
