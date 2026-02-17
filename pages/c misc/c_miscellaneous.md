@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Computer Architecture
-permalink: /notes/c
+permalink: /notes/c/
 ---
 [← ../Notes](../)
 
