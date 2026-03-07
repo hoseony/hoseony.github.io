@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Computer Architecture
+title: C Miscellaneous
 permalink: /notes/c/
 ---
 [← ../Notes](../)
 
-# Computer Architecture
+# C Miscellaneous
 - [Printf and Terminal Control](./terminalControl)
