@@ -16,8 +16,6 @@ I am not arguing that it is better than modern IDEs like VScode, but it is defin
 ### vim or nvim?
 At the current stage I mostly use nvim as I got tired of using vimrc while general community has been shifting to nvim. It is not necessarily easier than vim (vimscript), but its plugin ecosystem is much more larger and actively maintained.
 
-Generally, there are two options you can take: making a config from scratch or from a preset. And I cannot say one is better than the other. Right now, I have two nvim setup, one built on top of nvchad and another one with minimal setup. If you do not want to think about setting up your own nvim, going for a preset should work fine. However, in this way, you have to learn what someone else has already made. Usually, I find starting from scratch more useful to me. I can only add stuff that I want to add. When I feel like I am missing something, I go search for some plugins and add them. 
-
 Generally, there are two ways to approach Neovim: building a configuration from scratch or starting from a preset. I do not think one is universally better than the other.
 
 At the moment, I keep two Neovim setups: one built on top of NvChad and another minimal configuration with only the features I use regularly. If you do not want to spend much time setting up Neovim yourself, starting from a preset is a perfectly reasonable choice. It gives you a modern environment immediately, with many common features already integrated.
