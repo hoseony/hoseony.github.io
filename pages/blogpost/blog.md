@@ -6,4 +6,4 @@ permalink: /blog/
 [← ../Notes](../)
 
 # Blog
-* [Feb 13, 2026](./02132026)
+* [Feb 13, 2026 - some resources & softwares](./02132026)

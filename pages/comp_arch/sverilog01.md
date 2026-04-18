@@ -48,7 +48,7 @@ Think this code as your "device." To test your device, you need some other stuff
 The following is an example test bench for the code that was presented above. 
 
 ```c
-`timescale 1ns/1ps // this defines time unit / precision
+`timescale 1ns/1ps // this defines timeunit / precision
                    // time unit defines what #1 means, in this case 1ns
                    // time precision is the smalleset unit that simulator can
                    // represent
