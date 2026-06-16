@@ -11,7 +11,7 @@ _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 
 I think I will be talking about some random MIPS stuff.
 
-## Basic Formatitng 
+## Basic Formatting
 ```s
 .data
     example_variable: .word 0
@@ -28,7 +28,7 @@ main:
 
 ## Testing / Compiling
 [JsSpim](https://shawnzhong.github.io/JsSpim/)
-This is very good online MIPS emulator. I found this more useful and user friendly than homebrew spim that I was originally using. 
+This is a very good online MIPS emulator. I found it more useful and user-friendly than the Homebrew spim that I was originally using.
 
 
 ## Syscall
@@ -43,6 +43,6 @@ main:
 ```
 
 ## Stack Pointer
-These two videos gave me enough explanation. 
+These two videos gave me enough of an explanation.
 * [SP1](https://youtu.be/yvGIYG6zYQA?si=8V4cCK3Iw_ZLxAjz)
 * [SP2](https://youtu.be/ewpo1NERc3o?si=R9fB534AdwfxuEkH)

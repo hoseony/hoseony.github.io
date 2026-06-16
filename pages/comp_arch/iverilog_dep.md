@@ -10,11 +10,11 @@ lastmod: 2026-02-13
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 
 ### Icarus Verilog (iverilog):
-This is your compiler for system verilog. You can [homebrew](https://formulae.brew.sh/formula/icarus-verilog) this. \
-** make sure you have vvp
+This is your compiler for SystemVerilog. You can install it with [Homebrew](https://formulae.brew.sh/formula/icarus-verilog). \
+**Make sure you have vvp.
 
 ### GTKwave:  
-if you already tried installing through brew...
+If you already tried installing it through Homebrew...
 
 ```
 brew uninstall gtkwave
@@ -24,30 +24,30 @@ brew install --HEAD randomplum/gtkwave/gtkwave
 
 ### Running the files:
 
-First you need to compile the file
+First, you need to compile the file.
 ```
 iverilog -g2012 -o simulation.vvp tb_example.sv example.sv
 ```
-* -g2012 for systemVerilog 2012 features
-* -o to specify output file
+* -g2012 for SystemVerilog 2012 features
+* -o to specify the output file
 
-Then execute the file with
+Then execute the file with:
 ```
 vvp simulation.vvp
 ```
 
-to view the waves
+To view the waves:
 ```
 gtkwave simulation.vcd
 ```
 
-note that to view the wave, you need to add dumpfiles and dumpvars in your testbench file. \
-Also, as you might have noticed this is not fun. So let's use makefile.
+Note that to view the wave, you need to add dumpfiles and dumpvars in your testbench file. \
+Also, as you might have noticed, this is not fun. So let's use a Makefile.
 
 ### Makefile:
-first, create a file that is called `Makefile`. \
+First, create a file called `Makefile`. \
 I recommend using [this](https://github.com/robmarano/verilog_project_template/tree/main).
-few things that needed to be changed:
+A few things need to be changed:
 
 ```
 simulate: $(COMPONENT).vvp 
@@ -55,8 +55,8 @@ simulate: $(COMPONENT).vvp
 	$(SIMULATOR) $(SFLAGS) $(COMPONENT).vvp #$(SOUTPUT) 
 ```
 
-comment out the $(SOUTPUT) part \
-Also I added `*.vvp` on my clean
+Comment out the $(SOUTPUT) part. \
+Also, I added `*.vvp` to my clean rule.
 
 ### Example:
 ![example_usage.png](../assets/comp_arch_makefile.png)
@@ -73,5 +73,4 @@ Also I added `*.vvp` on my clean
 → to clean \
 `make COMPONENT=example_module clean` 
 
-** Notice how it is still not that great of a makefile. But I don't know Makefile well enough yet.
-
+**Notice:** It is still not that great of a Makefile, but I don't know Makefiles well enough yet.

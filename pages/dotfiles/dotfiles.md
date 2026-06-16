@@ -1,12 +1,12 @@
 ---
 layout: default
-title: dotfiles
+title: Dotfiles
 permalink: /notes/dotfiles/
 ---
 [← ../Notes](../)
 
 # Dotfiles
-- managing dotfiles - chezmoi
-- [Thoughts on vim / nvim](./vim) - few stuff
+- Managing dotfiles - chezmoi
+- [Thoughts on vim / nvim](./vim)
 - [tmux](./tmux)
 - zshenv - powerlevel10k

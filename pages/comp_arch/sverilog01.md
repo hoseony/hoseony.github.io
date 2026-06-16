@@ -10,9 +10,9 @@ lastmod: 2026-02-14
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 
 ## Example
-Well... I had to learn SystemVerilog. And this is something that I made while trying to learn it. \
-The original code was from Prof. Marano's [website](https://robmarano.github.io/courses/ece251/2026/weeks/week_04/notes_week_04.html) \
-I just spammed some comments, but I thought some might find it helpful.
+Well... I had to learn SystemVerilog. This is something that I made while trying to learn it. \
+The original code was from Prof. Marano's [website](https://robmarano.github.io/courses/ece251/2026/weeks/week_04/notes_week_04.html). \
+I added a lot of comments, and I thought some people might find them helpful.
 
 ```c
 module my_module (
@@ -22,11 +22,11 @@ module my_module (
     output logic [3:0]  data_out 
 );
 
-    // here we define internal signals, parameters and types before using them
+    // here we define internal signals, parameters, and types before using them
     logic [3:0] internal_signal;
     localparam WIDTH = 4;
-    // this just decalres local varisable called WIDTH and making it 4. 
-    // though it is not used in here anyways.
+    // this just declares a local variable called WIDTH and sets it to 4.
+    // it is not used here anyway.
 
     // Dataflow: continuous assignment
     assign internal_signal = ~data_in;  // ~ is bitwise not
@@ -34,28 +34,28 @@ module my_module (
     // this is making sequential logic here
     always_ff @(posedge clk) begin
         if (rst) 
-            data_out <= 4'b0; // alway_ff you use <= but alwasy_comb you use =
+            data_out <= 4'b0; // with always_ff, you use <=; with always_comb, you use =
         else
             data_out <= internal_signal;
     end
 
 endmodule
 
-// to test this logic, we need testbench.
+// to test this logic, we need a testbench.
 // --> let's go to tb_my_module.sv
 ```
-Think this code as your "device." To test your device, you need some other stuff to test it out, and we call thie test bench. 
-The following is an example test bench for the code that was presented above. 
+Think of this code as your "device." To test your device, you need something else to test it with, and we call this a testbench.
+The following is an example testbench for the code presented above.
 
 ```c
 `timescale 1ns/1ps // this defines timeunit / precision
                    // time unit defines what #1 means, in this case 1ns
-                   // time precision is the smalleset unit that simulator can
+                   // time precision is the smallest unit that simulator can
                    // represent
 
 module tb_my_module; // components that you want to test should be declared here
 
-    // DUT signals, *dut meaning design under test (DUT: Device Undet Test)
+    // DUT signals, *dut meaning design under test (DUT: Device Under Test)
     // here you are declaring variables to connect to DUT.
     // don't do input logic clk or output logic ... because that is not the module
     logic clk;
@@ -82,17 +82,17 @@ module tb_my_module; // components that you want to test should be declared here
     end
 
     // ------------------------------------
-    // Nice job, now you have initilized your testbench
+    // Nice job, now you have initialized your testbench
     // ------------------------------------
 
     initial begin
         $display("time | rst | clk | data_in | data_out |");
         $monitor("t=%0t| rst=%b | clk=%b | data_in=%h | data_out=%h", $time, clk, rst, data_in, data_out);
-        // think display and monitor as a printf of c.
-        // display only prints out the test, and monitor is how you print variables with printf.
+        // think of display and monitor as printf in C.
+        // display only prints out the text, and monitor is how you print variables with printf.
 
         // t for time
-        // b for bindary
+        // b for binary
         // h for hex
 
 
@@ -101,7 +101,7 @@ module tb_my_module; // components that you want to test should be declared here
 
         repeat (2) @(posedge clk);
         rst = 0;
-        // it holds rst = 0 for 2 pos edge clock
+        // it holds rst = 0 for 2 positive clock edges
 
         // let's test some values
         data_in = 4'hA; @(posedge clk);
@@ -114,7 +114,7 @@ module tb_my_module; // components that you want to test should be declared here
 endmodule 
 ```
 
-Another useful thing that I wanted to mention is that when you have several input variables, you can make something that is really similar to the truth table:
+Another useful thing that I wanted to mention is that when you have several input variables, you can make something that is very similar to a truth table:
 
 ```c
 initial a = 0;

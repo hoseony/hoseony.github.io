@@ -1,9 +1,9 @@
 ---
 layout: default
-title: projects
+title: Projects
 permalink: /projects/
 ---
 
-# projects
+# Projects
 
-website under construction
+This page is under construction.

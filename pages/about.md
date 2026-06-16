@@ -6,4 +6,4 @@ permalink: /about/
 
 # About
 
-Hello, I am Hoseon Yu, an Electrical Engineering student at the Cooper Union.
+Hello, I am Hoseon Yu, an electrical engineering student at The Cooper Union.
