@@ -16,10 +16,98 @@
     <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
 </head>
 <body>
-<div class="container-lg px-3 my-5 markdown-body">
+{% assign page_url = page.url | default: "" %}
+{% assign show_toc = false %}
+{% if page_url contains "/notes/" %}
+  {% assign show_toc = true %}
+{% endif %}
+{% if page_url contains "/blog/" %}
+  {% assign show_toc = true %}
+{% endif %}
+<div class="container-lg px-3 my-5 site-page">
     {% include header.html %}
-    {{ content }}
+    <div class="site-content-row">
+        <main id="site-content" class="markdown-body">
+            {{ content }}
+        </main>
+        {% if show_toc %}
+        <aside class="page-toc" aria-label="On this page" hidden>
+            <nav id="page-toc-list"></nav>
+        </aside>
+        {% endif %}
+    </div>
 </div>
 {% include footer.html %}
+<script>
+(function () {
+  const content = document.getElementById("site-content");
+  const toc = document.querySelector(".page-toc");
+  const list = document.getElementById("page-toc-list");
+  if (!content || !toc || !list) return;
+
+  const headings = Array.from(content.querySelectorAll("h2, h3"));
+  if (headings.length < 2) return;
+
+  const usedIds = new Set();
+
+  function slugify(text) {
+    return text
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "") || "section";
+  }
+
+  headings.forEach((heading) => {
+    let baseId = heading.id || slugify(heading.textContent);
+    let id = baseId;
+    let count = 2;
+
+    while (usedIds.has(id) || (document.getElementById(id) && document.getElementById(id) !== heading)) {
+      id = `${baseId}-${count}`;
+      count += 1;
+    }
+
+    heading.id = id;
+    usedIds.add(id);
+
+    const link = document.createElement("a");
+    link.href = `#${id}`;
+    link.textContent = heading.textContent;
+    link.className = `page-toc-link page-toc-${heading.tagName.toLowerCase()}`;
+    link.dataset.headingId = id;
+    list.appendChild(link);
+  });
+
+  const links = Array.from(list.querySelectorAll(".page-toc-link"));
+
+  function setActive(id) {
+    links.forEach((link) => {
+      link.classList.toggle("is-active", link.dataset.headingId === id);
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+      if (visible[0]) setActive(visible[0].target.id);
+    }, {
+      rootMargin: "-15% 0px -70% 0px",
+      threshold: 0
+    });
+
+    headings.forEach((heading) => observer.observe(heading));
+  } else if (headings[0]) {
+    setActive(headings[0].id);
+  }
+
+  toc.hidden = false;
+})();
+</script>
 </body>
 </html>
