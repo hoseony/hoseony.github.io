@@ -9,10 +9,12 @@ lastmod: 2026-02-14
 # Learning SystemVerilog 01
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 
-## Example
+## Overview
 Well... I had to learn SystemVerilog. This is something that I made while trying to learn it. \
 The original code was from Prof. Marano's [website](https://robmarano.github.io/courses/ece251/2026/weeks/week_04/notes_week_04.html). \
 I added a lot of comments, and I thought some people might find them helpful.
+
+## Module Example
 
 ```c
 module my_module (
@@ -44,6 +46,9 @@ endmodule
 // to test this logic, we need a testbench.
 // --> let's go to tb_my_module.sv
 ```
+
+## Testbench Example
+
 Think of this code as your "device." To test your device, you need something else to test it with, and we call this a testbench.
 The following is an example testbench for the code presented above.
 
@@ -113,6 +118,8 @@ module tb_my_module; // components that you want to test should be declared here
 
 endmodule 
 ```
+
+## Input Timing Pattern
 
 Another useful thing that I wanted to mention is that when you have several input variables, you can make something that is very similar to a truth table:
 
