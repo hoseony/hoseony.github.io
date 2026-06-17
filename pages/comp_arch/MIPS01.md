@@ -6,7 +6,7 @@ lastmod: 2026-02-15
 ---
 [← ../Computer_Architecture](../comp_arch)
 
-# MIPS 01 [WIP]
+# MIPS 01
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 
 I think I will be talking about some random MIPS stuff.
