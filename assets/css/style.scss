@@ -58,12 +58,14 @@ body,
 
 .markdown-body > ul > li > ul a {
   color: var(--color-fg-muted, inherit);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
 }
 
 .markdown-body > ul > li > ul a:hover {
   color: var(--color-text-link, #0969da);
-  text-decoration: underline;
+  text-decoration-style: solid;
 }
 
 .markdown-body > ul > li > ul {
@@ -75,11 +77,27 @@ body,
   position: relative;
 }
 
-.markdown-body > ul > li > ul li::before {
+.markdown-body > ul > li > ul > li::before {
   position: absolute;
   left: -1.1em;
   color: var(--color-fg-muted, inherit);
   content: "-";
+}
+
+.markdown-body > ul > li > ul > li > ul {
+  padding-left: 1.4em;
+  list-style: none;
+}
+
+.markdown-body > ul > li > ul > li > ul > li {
+  position: relative;
+}
+
+.markdown-body > ul > li > ul > li > ul > li::before {
+  position: absolute;
+  left: -1.4em;
+  color: var(--color-fg-muted, inherit);
+  content: "└";
 }
 
 .page-toc {
@@ -265,7 +283,11 @@ body,
 @media (min-width: 1280px) {
   .landing-home {
     grid-template-columns: minmax(0, 1fr) 220px;
-    column-gap: 28px;
+    column-gap: 40px;
+  }
+
+  .landing-home .side-tree-map {
+    transform: translateX(24px);
   }
 }
 
