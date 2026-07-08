@@ -9,3 +9,4 @@ permalink: /notes/embedded/
 - pico rp2350
 - STM32F407 Discovery [ The project repository is still private ]
   - [01 Blinky](./blinky01)
+  - [02 UART](./uart02)

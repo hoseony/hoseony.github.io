@@ -16,6 +16,7 @@ Here is a list of notes I have written for this website.
 - [Embedded](./embedded)
   - STM32F407 Discovery
     - [01 Blinky](./embedded/blinky01)
+    - [02 UART](./embedded/uart02)
 - [Dotfiles](./dotfiles)
   - [Thoughts on vim / nvim](./dotfiles/vim)
   - [tmux](./dotfiles/tmux)
