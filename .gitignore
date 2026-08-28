@@ -32,6 +32,9 @@ Gemfile.lock
 .AppleDouble
 .LSOverride
 
+# Keep the original phone photo local; the site uses a stripped web copy.
+assets/projects/EtchASketch.jpg
+
 # ========================
 # Logs
 # ========================
