@@ -4,8 +4,6 @@ title: 02 UART
 permalink: /notes/embedded/uart02
 lastmod: 2026-07-07
 ---
-[← ../Embedded](../embedded)
-
 # 02 UART
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 

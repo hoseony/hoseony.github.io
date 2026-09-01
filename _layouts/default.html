@@ -28,6 +28,7 @@
     {% include header.html %}
     <div class="site-content-row">
         <main id="site-content" class="markdown-body">
+            {% include breadcrumbs.html %}
             {{ content }}
         </main>
         {% if show_toc %}

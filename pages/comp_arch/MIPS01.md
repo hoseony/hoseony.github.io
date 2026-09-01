@@ -1,11 +1,9 @@
 ---
 layout: default
-title: SystemVerilog on macOS
+title: MIPS 01
 permalink: /notes/comp_arch/MIPS01
 lastmod: 2026-02-15
 ---
-[← ../Computer_Architecture](../comp_arch)
-
 # MIPS 01
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 

@@ -3,9 +3,6 @@ layout: default
 title: vim
 permalink: /notes/dotfiles/vim
 ---
-
-[← ../dotfiles](../dotfiles)
-
 ## Thoughts about vim / nvim
 
 ### Why would you ever consider using vim / nvim?

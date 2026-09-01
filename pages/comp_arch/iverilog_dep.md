@@ -4,8 +4,6 @@ title: SystemVerilog on macOS
 permalink: /notes/comp_arch/iverilog_dep
 lastmod: 2026-02-13
 ---
-[← ../Computer_Architecture](../comp_arch)
-
 ## SystemVerilog on macOS & Makefile
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 

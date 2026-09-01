@@ -1,11 +1,9 @@
 ---
 layout: default
-title: SystemVerilog on macOS
+title: Printf and Terminal Control
 permalink: /notes/c/terminalControl
 lastmod: 2026-04-18
 ---
-[← ../C Miscellaneous](../c)
-
 ## Printf and Terminal Control
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_ 
 

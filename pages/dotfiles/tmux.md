@@ -3,9 +3,6 @@ layout: default
 title: tmux
 permalink: /notes/dotfiles/tmux
 ---
-
-[← ../dotfiles](../dotfiles)
-
 ## tmux
 
 Tmux might be one of the coolest additions to your workflow. It allows you to switch between several terminals easily, and it is highly customizable. Also, you can split screens (and more)!

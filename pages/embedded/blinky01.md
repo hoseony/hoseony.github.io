@@ -4,8 +4,6 @@ title: 01 Blinky
 permalink: /notes/embedded/blinky01
 lastmod: 2026-06-17
 ---
-[← ../Embedded](../embedded)
-
 # 01 Blinky
 _Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
 

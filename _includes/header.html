@@ -1,113 +1,53 @@
-<div class="js-promo-color-modes-banner-profile isInitialToggle position-relative">
-  <!-- left -->
-    <a href="/" class="profile-title-text">
-    Hoseon Yu <span>- personal website</span>
-    </a>
+{% assign current_url = page.url | default: "/" %}
+<header class="site-header">
+  <a href="/" class="site-brand">Hoseon Yu</a>
 
-  <!-- right -->
-  <nav class="header-tabs" aria-label="Site">
-    <a class="header-tab" href="/about">about</a>
-    <a class="header-tab" href="/projects">projects</a>
-    <a class="header-tab" href="/notes">notes</a>
-
-    <!-- SIMPLE checkbox -->
-    <label class="theme-checkbox">
-      <input type="checkbox" id="theme-checkbox">
-    </label>
+  <nav class="header-tabs" aria-label="Primary navigation">
+    <a class="header-tab{% if current_url contains '/projects' %} is-current{% endif %}"
+       href="/projects/"{% if current_url contains '/projects' %} aria-current="page"{% endif %}>projects</a>
+    <a class="header-tab{% if current_url contains '/notes' %} is-current{% endif %}"
+       href="/notes/"{% if current_url contains '/notes' %} aria-current="page"{% endif %}>notes</a>
+    <a class="header-tab{% if current_url contains '/blog' %} is-current{% endif %}"
+       href="/blog/"{% if current_url contains '/blog' %} aria-current="page"{% endif %}>blog</a>
+    <a class="header-tab{% if current_url contains '/about' %} is-current{% endif %}"
+       href="/about/"{% if current_url contains '/about' %} aria-current="page"{% endif %}>about</a>
   </nav>
-</div>
 
-<style>
-/* header layout */
-.js-promo-color-modes-banner-profile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 10px 0;
-}
-
-/* title */
-.profile-title-text {
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-               "Liberation Mono","Courier New", monospace;
-  font-variant-ligatures: none;
-  font-size: 14px;
-  line-height: 1;
-  white-space: nowrap;
-  color: var(--color-fg-default, inherit);
-  text-decoration: none;
-  color: var(--color-fg-default, inherit);
-}
-.profile-title-text span {
-  color: var(--color-fg-muted, inherit);
-  font-weight: inherit;
-}
-
-.profile-title-text:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* tabs */
-.header-tabs {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-left: auto;
-}
-
-.header-tab {
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-               "Liberation Mono","Courier New", monospace;
-  font-variant-ligatures: none;
-  font-size: 13px;
-  line-height: 1;
-  color: var(--color-fg-muted, inherit);
-  text-decoration: none;
-}
-
-.header-tab:hover {
-  color: var(--color-fg-default, inherit);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* checkbox (keep it boring on purpose) */
-.theme-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-               "Liberation Mono","Courier New", monospace;
-  font-variant-ligatures: none;
-  font-size: 12px;
-  color: var(--color-fg-muted, inherit);
-}
-
-.theme-checkbox input {
-  cursor: pointer;
-}
-</style>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.5 8.5 0 1 0 20.2 15.2Z"></path>
+    </svg>
+    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="3.5"></circle>
+      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+    </svg>
+  </button>
+</header>
 
 <script>
 (function () {
   const KEY = "markdown_only_dark_mode";
-  const checkbox = document.getElementById("theme-checkbox");
+  const toggle = document.getElementById("theme-toggle");
   const root = document.documentElement;
+  if (!toggle) return;
 
-  function apply(mode) {
+  function apply(mode, persist) {
+    const isDark = mode === "dark";
     root.setAttribute("data-color-mode", mode);
-    checkbox.checked = (mode === "dark");
-    localStorage.setItem(KEY, mode);
+    toggle.setAttribute("aria-pressed", String(isDark));
+    toggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+    toggle.title = isDark ? "Switch to light theme" : "Switch to dark theme";
+    if (persist) localStorage.setItem(KEY, mode);
   }
 
-  // load saved mode
   const saved = localStorage.getItem(KEY);
-  if (saved) apply(saved);
+  const initial = saved === "dark" || saved === "light"
+    ? saved
+    : (root.getAttribute("data-color-mode") === "dark" ? "dark" : "light");
+  apply(initial, false);
 
-  checkbox.addEventListener("change", () => {
-    apply(checkbox.checked ? "dark" : "light");
+  toggle.addEventListener("click", function () {
+    apply(root.getAttribute("data-color-mode") === "dark" ? "light" : "dark", true);
   });
 })();
 </script>

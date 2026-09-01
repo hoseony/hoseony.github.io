@@ -1,0 +1,49 @@
+{% assign breadcrumb_url = page.url | default: "" %}
+{% if breadcrumb_url contains "/notes/" and breadcrumb_url != "/notes/" %}
+<nav class="site-breadcrumbs" aria-label="Breadcrumb">
+  <a href="/notes/">notes</a>
+  {% if breadcrumb_url contains "/notes/comp_arch/" %}
+    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+    {% if breadcrumb_url == "/notes/comp_arch/" %}
+      <span aria-current="page">computer architecture</span>
+    {% else %}
+      <a href="/notes/comp_arch/">computer architecture</a>
+      <span class="breadcrumb-separator" aria-hidden="true">/</span>
+      <span aria-current="page">{{ page.title | downcase }}</span>
+    {% endif %}
+  {% elsif breadcrumb_url contains "/notes/c/" %}
+    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+    {% if breadcrumb_url == "/notes/c/" %}
+      <span aria-current="page">C miscellaneous</span>
+    {% else %}
+      <a href="/notes/c/">C miscellaneous</a>
+      <span class="breadcrumb-separator" aria-hidden="true">/</span>
+      <span aria-current="page">{{ page.title }}</span>
+    {% endif %}
+  {% elsif breadcrumb_url contains "/notes/embedded/" %}
+    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+    {% if breadcrumb_url == "/notes/embedded/" %}
+      <span aria-current="page">embedded</span>
+    {% else %}
+      <a href="/notes/embedded/">embedded</a>
+      <span class="breadcrumb-separator" aria-hidden="true">/</span>
+      <span aria-current="page">{{ page.title | downcase }}</span>
+    {% endif %}
+  {% elsif breadcrumb_url contains "/notes/dotfiles/" %}
+    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+    {% if breadcrumb_url == "/notes/dotfiles/" %}
+      <span aria-current="page">dotfiles</span>
+    {% else %}
+      <a href="/notes/dotfiles/">dotfiles</a>
+      <span class="breadcrumb-separator" aria-hidden="true">/</span>
+      <span aria-current="page">{{ page.title | downcase }}</span>
+    {% endif %}
+  {% endif %}
+</nav>
+{% elsif breadcrumb_url contains "/blog/" and breadcrumb_url != "/blog/" %}
+<nav class="site-breadcrumbs" aria-label="Breadcrumb">
+  <a href="/blog/">blog</a>
+  <span class="breadcrumb-separator" aria-hidden="true">/</span>
+  <span aria-current="page">{{ page.title | downcase }}</span>
+</nav>
+{% endif %}

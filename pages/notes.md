@@ -20,6 +20,3 @@ Here is a list of notes I have written for this website.
 - [Dotfiles](./dotfiles)
   - [Thoughts on vim / nvim](./dotfiles/vim)
   - [tmux](./dotfiles/tmux)
-- [Blog](../blog)
-  - [Making this website](../blog/04182026)
-  - [Some resources and software](../blog/02132026)
