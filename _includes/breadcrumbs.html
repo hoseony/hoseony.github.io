@@ -29,6 +29,15 @@
       <span class="breadcrumb-separator" aria-hidden="true">/</span>
       <span aria-current="page">{{ page.title | downcase }}</span>
     {% endif %}
+  {% elsif breadcrumb_url contains "/notes/os/" %}
+    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+    {% if breadcrumb_url == "/notes/os/" %}
+      <span aria-current="page">operating systems</span>
+    {% else %}
+      <a href="/notes/os/">operating systems</a>
+      <span class="breadcrumb-separator" aria-hidden="true">/</span>
+      <span aria-current="page">{{ page.title | downcase }}</span>
+    {% endif %}
   {% elsif breadcrumb_url contains "/notes/dotfiles/" %}
     <span class="breadcrumb-separator" aria-hidden="true">/</span>
     {% if breadcrumb_url == "/notes/dotfiles/" %}

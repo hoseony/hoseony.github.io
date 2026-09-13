@@ -47,17 +47,23 @@ body,
 }
 
 .site-brand {
+  display: block;
   grid-area: brand;
   width: max-content;
-  font-size: 14px;
-  line-height: 1;
-  color: var(--color-fg-default, inherit);
-  text-decoration: none;
+  opacity: .9;
+  transition: opacity .15s ease;
 }
 
 .site-brand:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  opacity: 1;
+}
+
+.site-brand-image {
+  display: block;
+  width: 128px;
+  height: 38px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .header-tabs {
