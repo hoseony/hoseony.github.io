@@ -60,10 +60,12 @@ body,
 
 .site-brand-image {
   display: block;
-  width: 128px;
-  height: 38px;
-  object-fit: cover;
-  object-position: center;
+  width: 144px;
+  height: auto;
+}
+
+[data-color-mode="dark"] .site-brand-image {
+  content: url("/assets/hy-dark-transparent.png");
 }
 
 .header-tabs {
