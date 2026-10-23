@@ -2,6 +2,7 @@
 layout: default
 title: tmux
 permalink: /notes/dotfiles/tmux
+lastmod: 2026-03-07
 ---
 ## tmux
 

@@ -2,6 +2,7 @@
 layout: default
 title: vim
 permalink: /notes/dotfiles/vim
+lastmod: 2026-04-05
 ---
 ## Thoughts about vim / nvim
 

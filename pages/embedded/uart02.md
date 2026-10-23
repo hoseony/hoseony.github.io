@@ -5,8 +5,6 @@ permalink: /notes/embedded/uart02
 lastmod: 2026-07-07
 ---
 # 02 UART
-_Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
-
 After getting blinky working, I wanted to make the board do some basic communication. The obvious choice was a UART driver.
 
 For this part, I used UART4 on the STM32F407 Discovery board (I do not remember why I chose UART4, but that is what it is):

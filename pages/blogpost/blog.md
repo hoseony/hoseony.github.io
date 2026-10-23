@@ -5,4 +5,4 @@ permalink: /blog/
 ---
 # Blog
 - [Feb 13, 2026 - Some resources and software](./02132026)
-- [Apr 14, 2026 - Making this website](./04182026)
+- [Apr 18, 2026 - Making this website](./04182026)

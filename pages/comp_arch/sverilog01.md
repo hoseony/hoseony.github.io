@@ -5,8 +5,6 @@ permalink: /notes/comp_arch/sverilog01
 lastmod: 2026-02-14
 ---
 # Learning SystemVerilog 01
-_Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
-
 ## Overview
 Well... I had to learn SystemVerilog. This is something that I made while trying to learn it. \
 The original code was from Prof. Marano's [website](https://robmarano.github.io/courses/ece251/2026/weeks/week_04/notes_week_04.html). \

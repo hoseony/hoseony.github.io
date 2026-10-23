@@ -40,7 +40,14 @@
     <div class="site-content-row">
         <main id="site-content" class="markdown-body">
             {% include breadcrumbs.html %}
-            {{ content }}
+            {% if page.lastmod %}
+              {% capture lastmod_line %}<p class="page-lastmod"><em>Last modified: {{ page.lastmod | date: "%b %d, %Y" }}</em></p>{% endcapture %}
+              {% if content contains "</h1>" %}{% assign heading_end = "</h1>" %}{% else %}{% assign heading_end = "</h2>" %}{% endif %}
+              {% capture heading_with_date %}{{ heading_end }}{{ lastmod_line }}{% endcapture %}
+              {{ content | replace_first: heading_end, heading_with_date }}
+            {% else %}
+              {{ content }}
+            {% endif %}
         </main>
         {% if show_toc %}
         <aside class="page-toc" aria-label="On this page" hidden>

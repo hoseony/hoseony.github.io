@@ -5,8 +5,6 @@ permalink: /notes/comp_arch/iverilog_dep
 lastmod: 2026-02-13
 ---
 ## SystemVerilog on macOS & Makefile
-_Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
-
 ### Icarus Verilog (iverilog):
 This is your compiler for SystemVerilog. You can install it with [Homebrew](https://formulae.brew.sh/formula/icarus-verilog). \
 **Make sure you have vvp.

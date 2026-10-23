@@ -5,8 +5,6 @@ permalink: /notes/c/modifyStructFILE
 lastmod: 2026-10-22
 ---
 ## Did you know that you can modify struct FILE?
-_Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
-
 For some reason, I never thought that this was something you could do. But since you have full access to the `struct FILE` inside your code, you can just modify its content. Why would you do that? I really don't know. BUT you CAN do it.
 
 Let's see how to do it. Why not?

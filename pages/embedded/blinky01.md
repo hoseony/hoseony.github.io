@@ -5,8 +5,6 @@ permalink: /notes/embedded/blinky01
 lastmod: 2026-06-17
 ---
 # 01 Blinky
-_Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
-
 To start off this project, I decided to write a bare-metal blinky program using the built-in LED on the STM32F407 Discovery board. I will use this page to collect notes as I learn more about bare-metal embedded development this summer.
 
 ## General Resources

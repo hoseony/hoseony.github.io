@@ -5,8 +5,6 @@ permalink: /notes/comp_arch/MIPS01
 lastmod: 2026-02-15
 ---
 # MIPS 01
-_Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_
-
 I think I will be talking about some random MIPS stuff.
 
 ## Basic Formatting

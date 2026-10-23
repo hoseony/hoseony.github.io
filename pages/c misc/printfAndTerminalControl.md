@@ -5,8 +5,6 @@ permalink: /notes/c/terminalControl
 lastmod: 2026-04-18
 ---
 ## Printf and Terminal Control
-_Last modified: {{ page.lastmod | date: "%b %d, %Y" }}_ 
-
 So today, I was coding SOS in C just because. I really wanted to make a cleaner board for obvious reasons. After some browsing, I found a good [website](https://student.cs.uwaterloo.ca/~cs452/terminal.html) that had everything I needed. Below, I transferred the entire website into .md format.
 
 ---
