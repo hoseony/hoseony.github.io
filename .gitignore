@@ -52,3 +52,9 @@ assets/projects/EtchASketch.jpg
 # ========================
 
 node_modules/
+
+# ========================
+# Design source files (keep local)
+# ========================
+
+*.psd

@@ -57,7 +57,7 @@ Comment out the $(SOUTPUT) part. \
 Also, I added `*.vvp` to my clean rule.
 
 ### Example:
-![example_usage.png](../assets/comp_arch_makefile.png)
+![example_usage.png](/pages/assets/comp_arch_makefile.png)
 
 → to compile \
 `make COMPONENT=tb_example_module.sv compile` 
